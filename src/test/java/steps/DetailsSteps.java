@@ -34,22 +34,28 @@ public class DetailsSteps {
         Assert.assertEquals(expectedCode, responseCode);
     }
 
-    @And("^I verify Name should be equal to Carbon credits$")
-    public void iVerifyNameShouldBeEqualToCarbonCredits() throws Throwable {
+    @And("^I verify (.*) should be equal to (.*)$")
+    public void iVerifyStringEquals(String element, String expectedResult) throws Throwable {
         JsonPath jsonPathEvaluator = response.jsonPath();
-        String ActualResult = jsonPathEvaluator.get("Name");
-        Assert.assertEquals("Carbon credits",ActualResult);
+        String ActualResult = jsonPathEvaluator.get(element);
+        Assert.assertEquals(expectedResult,ActualResult);
     }
 
-    @And("^I verify CanRelist should be equal to true$")
-    public void iVerifyCanRelistShouldBeEqualToTrue() throws Throwable {
+    @And("^Verify (.*) should be (.*)$")
+    public void VerifyBoolean(String element, String expectedResult) throws Throwable {
         JsonPath jsonPathEvaluator = response.jsonPath();
-        boolean ActualResult = jsonPathEvaluator.get("CanRelist");
+        boolean ActualResult = jsonPathEvaluator.get(element);
+        if(expectedResult.equals("true")) {
             Assert.assertTrue(ActualResult);
+        }
+        else
+        {
+            Assert.assertFalse(ActualResult);
+        }
     }
 
     @And("^I verify Description should contain 2x larger image$")
-    public void iVerifyDescriptionShouldContainXLargerImage() throws Throwable {
+    public void iVerifyStringContains() throws Throwable {
         JsonPath jsonPathEvaluator = response.jsonPath();
         String ActualResult = jsonPathEvaluator.get("Promotions.find {it.Name=='Gallery'}.Description");
         Assert.assertTrue(ActualResult.contains("2x larger image"));

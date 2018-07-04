@@ -11,12 +11,18 @@ Feature: Verify Details.json service
     And I verify the service response is 200
 
   @Name @StringEquals
-  Scenario: Verify Name to be equal to Carbon credits in Details Service
-    And I verify Name should be equal to Carbon credits
+  Scenario Outline: Verify Name to be equal to Carbon credits in Details Service
+    And I verify <Element> should be equal to <Expected result>
+    Examples:
+      | Element | Expected result |
+      | Name    | Carbon credits  |
 
   @CanRelist @Boolean
-  Scenario: Verify CanRelist to be equal to true in Details Service
-    And I verify CanRelist should be equal to true
+  Scenario Outline: Verify CanRelist to be equal to true in Details Service
+    And Verify <Element> should be <Expected result>
+    Examples:
+      | Element   | Expected result |
+      | CanRelist | true            |
 
   @Description @StringContains
   Scenario: Verify Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
