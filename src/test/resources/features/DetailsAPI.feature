@@ -11,3 +11,9 @@ Feature: Verify Details.json service
     And I call the Get service for details json
     And I verify the service response is 200
     And I verify Name should be equal to Carbon credits
+
+    Scenario: Verify CanRelist to be equal to true in Details Service
+      Given I set the base URI to Categories
+      And I call the Get service for details json
+      And I verify the service response is 200
+      And I verify CanRelist should be equal to true

@@ -40,4 +40,11 @@ public class DetailsSteps {
         String ActualResult = jsonPathEvaluator.get("Name");
         Assert.assertEquals("Carbon credits",ActualResult);
     }
+
+    @And("^I verify CanRelist should be equal to true$")
+    public void iVerifyCanRelistShouldBeEqualToTrue() throws Throwable {
+        JsonPath jsonPathEvaluator = response.jsonPath();
+        boolean ActualResult = jsonPathEvaluator.get("CanRelist");
+            Assert.assertTrue(ActualResult);
+    }
 }
