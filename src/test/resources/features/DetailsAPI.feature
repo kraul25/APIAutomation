@@ -25,5 +25,8 @@ Feature: Verify Details.json service
       | CanRelist | true            |
 
   @Description @StringContains
-  Scenario: Verify Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
-    And I verify Description should contain 2x larger image
+  Scenario Outline: Verify Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
+    And I verify <Element> should contain <Expected result>
+  Examples:
+  | Element   | Expected result |
+  | Promotions.find {it.Name=='Gallery'}.Description | 2x larger image            |

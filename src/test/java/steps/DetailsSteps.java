@@ -54,10 +54,10 @@ public class DetailsSteps {
         }
     }
 
-    @And("^I verify Description should contain 2x larger image$")
-    public void iVerifyStringContains() throws Throwable {
+    @And("^I verify (.*) should contain (.*)$")
+    public void iVerifyStringContains(String element, String expectedResult) throws Throwable {
         JsonPath jsonPathEvaluator = response.jsonPath();
-        String ActualResult = jsonPathEvaluator.get("Promotions.find {it.Name=='Gallery'}.Description");
-        Assert.assertTrue(ActualResult.contains("2x larger image"));
+        String ActualResult = jsonPathEvaluator.get(element);
+        Assert.assertTrue(ActualResult.contains(expectedResult));
     }
 }
