@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -31,5 +32,12 @@ public class DetailsSteps {
     public void iVerifyTheServiceResponseIs(int expectedCode) throws Throwable {
         int responseCode = response.getStatusCode();
         Assert.assertEquals(expectedCode, responseCode);
+    }
+
+    @And("^I verify Name should be equal to Carbon credits$")
+    public void iVerifyNameShouldBeEqualToCarbonCredits() throws Throwable {
+        JsonPath jsonPathEvaluator = response.jsonPath();
+        String ActualResult = jsonPathEvaluator.get("Name");
+        Assert.assertEquals("Carbon credits",ActualResult);
     }
 }
