@@ -25,6 +25,11 @@ public class DetailsSteps {
     public void iCallTheGetServiceForDetailsJson() throws Throwable {
         RequestSpecification httpRequest = RestAssured.given();
         response = httpRequest.request(Method.GET, "/6327/Details.json?catalogue=false");
-        Assert.assertEquals(response.getStatusCode(),500);
+    }
+
+    @And("^I verify the service response is (\\d+)$")
+    public void iVerifyTheServiceResponseIs(int expectedCode) throws Throwable {
+        int responseCode = response.getStatusCode();
+        Assert.assertEquals(expectedCode, responseCode);
     }
 }

@@ -1,3 +1,4 @@
+@DetailsJson
 Feature: Verify Details.json service
   Verification points for the service are
   - Name = Carbon credits
