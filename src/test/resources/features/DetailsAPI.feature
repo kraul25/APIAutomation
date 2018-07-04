@@ -27,6 +27,6 @@ Feature: Verify Details.json service
   @Description @StringContains
   Scenario Outline: Verify Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
     And I verify <Element> should contain <Expected result>
-  Examples:
-  | Element   | Expected result |
-  | Promotions.find {it.Name=='Gallery'}.Description | 2x larger image            |
+    Examples:
+      | Element                                          | Expected result |
+      | Promotions.find {it.Name=='Gallery'}.Description | 2x larger image |
