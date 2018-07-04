@@ -47,4 +47,11 @@ public class DetailsSteps {
         boolean ActualResult = jsonPathEvaluator.get("CanRelist");
             Assert.assertTrue(ActualResult);
     }
+
+    @And("^I verify Description should contain 2x larger image$")
+    public void iVerifyDescriptionShouldContainXLargerImage() throws Throwable {
+        JsonPath jsonPathEvaluator = response.jsonPath();
+        String ActualResult = jsonPathEvaluator.get("Promotions.find {it.Name=='Gallery'}.Description");
+        Assert.assertTrue(ActualResult.contains("2x larger image"));
+    }
 }

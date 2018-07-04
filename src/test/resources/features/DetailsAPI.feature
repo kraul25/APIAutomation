@@ -16,3 +16,6 @@ Feature: Verify Details.json service
 
   Scenario: Verify CanRelist to be equal to true in Details Service
     And I verify CanRelist should be equal to true
+
+  Scenario: Verify Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
+    And I verify Description should contain 2x larger image
