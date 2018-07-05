@@ -35,8 +35,11 @@ Example below:All boolean elements can be verified with one single test scenario
       | CanListAuctions     | true            |
       | CanListClassifieds  | true            |
       
+Also, in DetailsJsonSteps.java the query parameters and path parameters have been added seperately so that the tests can be used for other Path parameters. 
+Currently 6327 as code is hardcoded but this can also be passed from cucumber feature files if the tests need to be run for different path params.
+      
 **How to execute the tests:**
-Using Maven(in terminal/command line):
+Using **Maven**(in terminal/command line):
 mvn clean verify "-Dcucumber.options = --tags @DetailsJson"
 
 Using IDE like intellij Idea:

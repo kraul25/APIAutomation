@@ -11,9 +11,9 @@ public class BaseSteps extends JsonPathImplementation{
 
     public static Response response;
 
-    @Given("^I set the base URI to Categories$")
-    public void iSetTheBaseURIToCategories() throws Throwable {
-        RestAssured.baseURI = "https://api.tmsandbox.co.nz/v1/Categories";
+    @Given("^I set the base URI to (.*)$")
+    public void iSetTheBaseURIToCategories(String url) throws Throwable {
+        RestAssured.baseURI = url;
     }
 
     @And("^I verify the service response is (\\d+)$")
@@ -22,11 +22,16 @@ public class BaseSteps extends JsonPathImplementation{
         Assert.assertEquals(expectedCode, responseCode);
     }
 
-
     @And("^I verify (.*) should be equal to (.*)$")
     public void iVerifyStringEquals(String element, String expectedResult) throws Throwable {
         String ActualResult = getJsonPathForString(element);
         Assert.assertEquals(expectedResult, ActualResult);
+    }
+
+    @And("^I verify (.*) should contain (.*)$")
+    public void iVerifyStringContains(String element, String expectedResult) throws Throwable {
+        String ActualResult = getJsonPathForString(element);
+        Assert.assertTrue(ActualResult.contains(expectedResult));
     }
 
     @And("^Verify (.*) should be (.*)$")
@@ -38,12 +43,4 @@ public class BaseSteps extends JsonPathImplementation{
             Assert.assertFalse(ActualResult);
         }
     }
-
-    @And("^I verify (.*) should contain (.*)$")
-    public void iVerifyStringContains(String element, String expectedResult) throws Throwable {
-        String ActualResult = getJsonPathForString(element);
-        Assert.assertTrue(ActualResult.contains(expectedResult));
-    }
-
-
 }

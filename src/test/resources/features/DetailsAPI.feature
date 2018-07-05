@@ -1,4 +1,5 @@
 @DetailsJson
+
 Feature: Verify Details.json service
   Verification points for the service are
   - Name = Carbon credits
@@ -6,7 +7,7 @@ Feature: Verify Details.json service
   - The Promotions element with Name = "Gallery" has Description that contains the text "2X larger image"
 
   Background:
-    Given I set the base URI to Categories
+    Given I set the base URI to https://api.tmsandbox.co.nz/v1/Categories
     And I call the Get service for details json
     And I verify the service response is 200
 
