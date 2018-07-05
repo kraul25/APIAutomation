@@ -12,15 +12,13 @@ public class DetailsJsonSteps {
 
     @And("^I verify (.*) should be equal to (.*)$")
     public void iVerifyStringEquals(String element, String expectedResult) throws Throwable {
-        JsonPath jsonPathEvaluator = baseSteps.response.jsonPath();
-        String ActualResult = jsonPathEvaluator.get(element);
+        String ActualResult = getJsonPathForString(element);
         Assert.assertEquals(expectedResult, ActualResult);
     }
 
     @And("^Verify (.*) should be (.*)$")
     public void VerifyBoolean(String element, String expectedResult) throws Throwable {
-        JsonPath jsonPathEvaluator = baseSteps.response.jsonPath();
-        boolean ActualResult = jsonPathEvaluator.get(element);
+        boolean ActualResult = getJsonPathForBoolean(element);
         if (expectedResult.equals("true")) {
             Assert.assertTrue(ActualResult);
         } else {
@@ -30,8 +28,21 @@ public class DetailsJsonSteps {
 
     @And("^I verify (.*) should contain (.*)$")
     public void iVerifyStringContains(String element, String expectedResult) throws Throwable {
-        JsonPath jsonPathEvaluator = baseSteps.response.jsonPath();
-        String ActualResult = jsonPathEvaluator.get(element);
+        String ActualResult = getJsonPathForString(element);
         Assert.assertTrue(ActualResult.contains(expectedResult));
+    }
+
+    private String getJsonPathForString(String element) {
+        JsonPath jsonPathEvaluator = getJsonPathEvaluator();
+        return jsonPathEvaluator.get(element);
+    }
+
+    private JsonPath getJsonPathEvaluator() {
+        return baseSteps.response.jsonPath();
+    }
+
+    private boolean getJsonPathForBoolean(String element) {
+        JsonPath jsonPathEvaluator = getJsonPathEvaluator();
+        return jsonPathEvaluator.get(element);
     }
 }
