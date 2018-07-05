@@ -1,14 +1,13 @@
 package steps;
 
+import Utils.JsonPathImplementation;
 import cucumber.api.java.en.And;
-import io.restassured.path.json.JsonPath;
 import org.junit.Assert;
 
 /**
  * Created by Raul on 5/7/18.
  */
-public class DetailsJsonSteps {
-    BaseSteps baseSteps;
+public class DetailsJsonSteps extends JsonPathImplementation {
 
     @And("^I verify (.*) should be equal to (.*)$")
     public void iVerifyStringEquals(String element, String expectedResult) throws Throwable {
@@ -32,17 +31,4 @@ public class DetailsJsonSteps {
         Assert.assertTrue(ActualResult.contains(expectedResult));
     }
 
-    private String getJsonPathForString(String element) {
-        JsonPath jsonPathEvaluator = getJsonPathEvaluator();
-        return jsonPathEvaluator.get(element);
-    }
-
-    private JsonPath getJsonPathEvaluator() {
-        return baseSteps.response.jsonPath();
-    }
-
-    private boolean getJsonPathForBoolean(String element) {
-        JsonPath jsonPathEvaluator = getJsonPathEvaluator();
-        return jsonPathEvaluator.get(element);
-    }
 }
