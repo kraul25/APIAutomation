@@ -70,7 +70,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: commons-validator:commons-validator:1.5.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-beanutils:commons-beanutils:1.9.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-digester:commons-digester:1.8.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.groovy:groovy:2.4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.4.10" level="project" />
     <orderEntry type="library" name="Maven: net.sf.opencsv:opencsv:2.0" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils-core:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.lambdaj:lambdaj:2.3.3" level="project" />
@@ -139,14 +139,27 @@
     <orderEntry type="library" name="Maven: net.serenity-bdd:serenity-rest-assured:1.5.9" level="project" />
     <orderEntry type="library" name="Maven: io.vavr:vavr:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: io.vavr:vavr-match:0.9.0" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-xml:2.4.6" level="project" />
-    <orderEntry type="library" name="Maven: org.ccil.cowan.tagsoup:tagsoup:1.2.1" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:json-path:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:2.4.6" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:xml-path:3.0.2" level="project" />
     <orderEntry type="library" name="Maven: info.cukes:cucumber-java:1.2.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: info.cukes:cucumber-junit:1.2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:rest-assured:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.groovy:groovy-xml:2.4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.ccil.cowan.tagsoup:tagsoup:1.2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:xml-path:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.xml.bind:jaxb-api:2.2.12" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:json-path:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:2.4.12" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:json-schema-validator:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:json-schema-validator:2.2.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.googlecode.libphonenumber:libphonenumber:6.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:json-schema-core:1.2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:uri-template:0.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:msg-simple:1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:btf:1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:jackson-coreutils:1.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.mozilla:rhino:1.7R4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.mail:mailapi:1.4.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.sf.jopt-simple:jopt-simple:4.6" level="project" />
   </component>
 </module>
