@@ -53,7 +53,7 @@ Tags behaviour when you run the tests:
 @Description: This tag will run only the scenario outline for Description
 @StringContains: This tag will run only the scenario outline for Description
 
-**How to read reports:**
+**How to read reports(When executed with maven command):**
 Go to target--> site --> serenity --> index.html(right click and open in browser)
 
 Once opened, this will show you the total test scenarios executed and total test scenarios passed/failed.

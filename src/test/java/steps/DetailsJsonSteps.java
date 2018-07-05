@@ -11,7 +11,7 @@ public class DetailsJsonSteps {
 
     @And("^I call the Get service for details json$")
     public void iCallTheGetServiceForDetailsJson() throws Throwable {
-        RequestSpecification httpRequest = RestAssured.given();
-        baseSteps.response = httpRequest.request(Method.GET, "/6327/Details.json?catalogue=false");
+        RequestSpecification httpRequest = RestAssured.given().queryParam("catalogue","false").pathParam("code","6327");
+        baseSteps.response = httpRequest.request(Method.GET, "/{code}/Details.json");
     }
 }
