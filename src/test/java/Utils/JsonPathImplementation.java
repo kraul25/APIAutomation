@@ -2,9 +2,6 @@ package Utils;
 
 import steps.BaseSteps;
 
-/**
- * Created by Raul on 5/7/18.
- */
 public class JsonPathImplementation {
     BaseSteps baseSteps;
 
